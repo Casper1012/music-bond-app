@@ -8,6 +8,7 @@ module.exports = {
         sm_customFocus: '#282733',
         sm_borderFocus: '#0060D9',
         sm_connectBg: '#1B1A22',
+        mc_customBg: 'rgba(27, 26, 34, 1)',
       },
       boxShadow: {
         'custom-blue': '0 4px 8px 0 rgba(6, 116, 252, 0.35), 0 6px 20px 0 rgba(13, 118, 247, 0.35)',
