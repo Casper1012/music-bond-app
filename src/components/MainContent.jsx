@@ -1,11 +1,25 @@
 import React from 'react';
 import { ReactComponent as Chevron_Icon } from '../assets/svg/chevron-alt.svg';
+
 import Geners_Img from './Geners_Img';
 import geners_1 from "../assets/img/geners_1.png";
 import geners_2 from "../assets/img/geners_2.png";
 import geners_3 from "../assets/img/geners_3.png";
 import geners_4 from "../assets/img/geners_4.png";
 import geners_5 from "../assets/img/geners_5.png";
+
+const genres = [
+  { url: geners_1, text: "Classic rock" },
+  { url: geners_2, text: "Jazz" },
+  { url: geners_3, text: "Dubstep" },
+  { url: geners_4, text: "Rhythm and Blues (R&B)" },
+  { url: geners_5, text: "Techno" },
+  { url: geners_1, text: "Classic rock" },
+  { url: geners_2, text: "Jazz" },
+  { url: geners_3, text: "Dubstep" },
+  { url: geners_4, text: "Rhythm and Blues (R&B)" },
+  { url: geners_5, text: "Techno" },
+];
 
 const MainContent = () => {
   return (
@@ -22,20 +36,21 @@ const MainContent = () => {
           </div>
         </div>
         
-        <div className='overflow-x-auto whitespace-nowrap scrollbar-hide w-full pt-[24px] pb-[18px] pl-[17px]'>
-          <div className='flex gap-[17px]'>
-            <Geners_Img url={geners_1} text="Classic rock" />
-            <Geners_Img url={geners_2} text="Jazz" />
-            <Geners_Img url={geners_3} text="Dubstep" />
-            <Geners_Img url={geners_4} text="Rhythm and Blues o R&B" />
-            <Geners_Img url={geners_5} text="Techno" />
-            <Geners_Img url={geners_1} text="Classic rock" />
-            <Geners_Img url={geners_2} text="Jazz" />
-            <Geners_Img url={geners_3} text="Dubstep" />
-            <Geners_Img url={geners_4} text="Rhythm and Blues o R&B" />
-            <Geners_Img url={geners_5} text="Techno" />
-          </div>
+        <div className='pt-[24px] gap-[17px]'>
+            {/* {genres.map((genre, index) => (
+              <Geners_Img url={genre.url} text={genre.text} />
+            ))} */}
+          <ul className="flex items-start justify-start w-full space-x-4 overflow-x-auto stories secure-container">
+            
+              {genres.map((genre, index) => (
+                <li className={`flex flex-none flex-col items-center cursor-pointer justify-between space-y-1 rounded-md text-white font-bold `} key={index}>
+                  <Geners_Img url={genre.url} text={genre.text} />
+                </li>
+              ))}
+              <li></li>
+          </ul>
         </div>
+        
       </div>
       
       <div className='h-[382px]'>
