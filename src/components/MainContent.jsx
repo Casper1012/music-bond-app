@@ -47,7 +47,7 @@ const MainContent = () => {
                   <Geners_Img url={genre.url} text={genre.text} />
                 </li>
               ))}
-            
+              <li></li>
           </ul>
         </div>
         
