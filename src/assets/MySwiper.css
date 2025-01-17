@@ -1,0 +1,8 @@
+.custom-slide {
+  margin-right: 20px;  /* Adjust spacing between slides */
+}
+
+.swiper-wrapper {
+  display: flex;
+  gap: 17px;
+}
