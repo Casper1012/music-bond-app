@@ -12,6 +12,9 @@ import right_btn from "../assets/img/right_btn.png";
 import left_btn from "../assets/img/left_btn.png";
 import right_hover_btn from "../assets/img/right_hover_btn.png";
 import left_hover_btn from "../assets/img/left_hover_btn.png";
+import eye_icon from "../assets/img/eye.png";
+import clock_icon from "../assets/img/clock.png"
+import Tracts_Tbl from "../components/tracks_tbl";
 
 const genres = [
   { url: geners_1, text: "Classic rock" },
@@ -66,7 +69,7 @@ const MainContent = () => {
       {/* Add your main content here */}
       
       <div className='h-[243.96px]'>
-        <div className='flex items-center gap-[12px]'>
+        <div className='flex items-center gap-[12px] cursor-default'>
           <span className='font-normal text-2xl leading-[30.24px] items-center justify-center'>Popular genres</span>
           <div className='flex items-end sw-[24px] h-[34px]'>
             <div className='flex items-center justify-center w-[24px] h-[24px]'>
@@ -101,6 +104,47 @@ const MainContent = () => {
       </div>
       
       <div className='h-[382px]'>
+        <div className='flex items-center gap-[12px] cursor-default'>
+          <span className='font-normal text-2xl leading-[30.24px] items-center justify-center'>Popular Tracks</span>
+          <div className='flex items-end sw-[24px] h-[34px]'>
+            <div className='flex items-center justify-center w-[24px] h-[24px]'>
+              <Chevron_Icon />
+            </div>
+          </div>
+        </div>
+        
+        <div className='relative pt-[24px] h-full w-full'>
+          <table className='w-full h-[44px] table-fixed'>
+            <thead>
+              <tr className='h-[44px]'>
+                <th className='h-[44px] w-[111px] text-left'>#</th>
+                <th className='h-[44px] w-full min-w-0 text-left'>
+                  <div>Title</div>
+                </th>
+                <th className='h-[44px] w-full min-w-0 text-left'>
+                  <div>Genres</div>
+                </th>
+                <th className='h-[44px] w-[65px]'>
+                  <div className='flex items-center justify-center'><img src={eye_icon} alt='eye_icon' /></div>
+                </th>
+                <th className='h-[44px] w-[105px]'>
+                  <div className='flex items-center justify-center'><img src={clock_icon} alt='clock icon' /></div>
+                </th>
+                <th className='h-[44px] w-[76px]'></th>
+              </tr>
+            </thead>
+          </table>
+          
+          <table className='w-full table-fixed'>          
+            <tbody>
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
