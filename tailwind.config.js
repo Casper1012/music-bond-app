@@ -12,6 +12,7 @@ module.exports = {
       },
       boxShadow: {
         'custom-blue': '0 4px 8px 0 rgba(6, 116, 252, 0.35), 0 6px 20px 0 rgba(13, 118, 247, 0.35)',
+        'geners-blue': '0px 0px 20px 0px rgba(6, 116, 252, 0.2)',
       },
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui'],
