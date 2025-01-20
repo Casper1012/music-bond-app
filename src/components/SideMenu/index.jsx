@@ -49,7 +49,7 @@ const SideMenu = () => {
                                     TunedCoin token
                                 </p>
                             </div>
-                            <button className='flex items-center justify-center gap-[10px] w-[189px] h-[36px] rounded-[20px] bg-custom-gradient hover:shadow-custom-blue transition duration-300'>
+                            <button className='flex items-center justify-center gap-[10px] w-[189px] h-[36px] rounded-[20px] bg-custom-gradient hover:bg-red-300 hover:shadow-custom-blue hover:transition-y-[-2px] transition-transform transition duration-300 ease-in-out'>
                                 <span className='text-white font-sans font-bold text-sm'>Connect your wallet</span>
                                 <span className='flex items-center text-white w-[20px] h-[20px]'><Arrow_Icon /></span>
                             </button>
