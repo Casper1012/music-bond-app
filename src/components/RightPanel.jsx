@@ -2,18 +2,18 @@ import React from 'react';
 import { FaHistory } from "react-icons/fa";
 import History_Stack from './history_stack';
 import music_avatar from "../assets/img/music_girl.png";
-import etherium_icon from "../assets/img/ethereum.png";
-import bitcoin_icon from "../assets/img/bitcoin.png";
-import arrow_right from "../assets/img/arrow_right.png";
+import etherium_icon from "../assets/svg/ethereum.svg";
+import bitcoin_icon from "../assets/svg/bitcoin.svg";
+import arrow_right from "../assets/svg/arrow_right.svg";
 
 const RightPanel = () => {
   return (
-    <div className="w-[314px] text-white font-sans bg-mc_customBg border-l-2 border-tbl_border pl-2 pt-[26px] pr-6 pb-0">
+    <div className="w-[314px] text-white font-sans bg-mc_customBg border-l-2 border-tbl_border pl-2 pt-[26px] pr-6 pb-0 overflow-hidden">
       <div className='flex items-center gap-[12px] w-[104px]'>
         <div className='flex items-center justify-center p-[4.25px]'>
           <FaHistory className='text-history_icon stroke-[0.1]' />
         </div>
-        <p className='text-center font-normal text-[20px] leading-[25.2px]'>History</p>
+        <p className='text-center font-normal text-[20px] leading-[25.2px] cursor-default'>History</p>
       </div>
       
       <div className='w-full pt-[9px]'>

@@ -11,7 +11,7 @@ const Layout = () => {
       {/* Header Section */}
       {/* <Header /> */}
 
-      <div className="flex flex-row flex-grow">
+      <div className="flex flex-row flex-grow overflow-hidden">
         {/* Side Menu */}
         <SideMenu />
 

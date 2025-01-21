@@ -1,6 +1,6 @@
 import history_avatar from "../assets/img/history_avatar.png";
 import { FaEllipsisV } from "react-icons/fa";
-import sharp_hover from "../assets/img/sharp_hover.png";
+import sharp_hover from "../assets/svg/sharp_hover.svg";
 
 const History_Stack = () => {
     return (

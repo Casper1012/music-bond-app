@@ -8,12 +8,12 @@ import geners_2 from "../assets/img/geners_2.png";
 import geners_3 from "../assets/img/geners_3.png";
 import geners_4 from "../assets/img/geners_4.png";
 import geners_5 from "../assets/img/geners_5.png";
-import right_btn from "../assets/img/right_btn.png";
-import left_btn from "../assets/img/left_btn.png";
-import right_hover_btn from "../assets/img/right_hover_btn.png";
+import right_btn from "../assets/svg/right_btn.svg";
+import left_btn from "../assets/svg/left_btn.svg";
+import right_hover_btn from "../assets/svg/right_hover_btn.svg";
 import left_hover_btn from "../assets/img/left_hover_btn.png";
-import eye_icon from "../assets/img/eye.png";
-import clock_icon from "../assets/img/clock.png"
+import eye_icon from "../assets/svg/eye.svg";
+import clock_icon from "../assets/svg/clock.svg"
 import Tracts_Tbl from "../components/tracks_tbl";
 
 const genres = [
@@ -65,7 +65,7 @@ const MainContent = () => {
   };
   
   return (
-    <div className="flex-1 flex flex-col overflow-hidden font-sans text-white bg-mc_customBg gap-[50px] h-[1464px] pt-[64px] pr-[16px] pb-[20px] pl-[25px]">
+    <div className="flex-1 overflow-y-scroll h-full flex flex-col font-sans text-white bg-mc_customBg gap-[50px] h-[1464px] pt-[64px] pr-[16px] pb-[20px] pl-[25px]">
       {/* Add your main content here */}
       
       <div className='h-[243.96px]'>
@@ -137,6 +137,16 @@ const MainContent = () => {
           
           <table className='w-full table-fixed'>          
             <tbody>
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
+              <Tracts_Tbl />
               <Tracts_Tbl />
               <Tracts_Tbl />
               <Tracts_Tbl />
