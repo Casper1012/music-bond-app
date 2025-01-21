@@ -1,7 +1,7 @@
 import tbl_avatar from "../assets/img/tbl_avatar.png";
-import { SlStar } from "react-icons/sl";
-import { FaEllipsisV } from "react-icons/fa";
-import sharp_hover_icon from "../assets/img/sharp_hover.png"
+import star_icon from "../assets/svg/star.svg";
+import ellipsis_icon from "../assets/svg/ellipsis.svg";
+import sharp_hover_icon from "../assets/svg/sharp_hover.svg"
 
 const Tracts_Tbl = () => {
     return (
@@ -33,12 +33,12 @@ const Tracts_Tbl = () => {
             </td>
             <td className="w-[61px] group-hover:bg-tbl_tr_hover_bg">
                 <div className="flex items-center justify-center h-[56px] align-baseline">
-                    <SlStar className="text-[18px] stroke-[20] text-tbl_star group-hover:text-genre_txt_hover"/>
+                    <img src={star_icon} alt="star icon" />
                 </div>
             </td>
             <td className="w-[40px] pr-[16px] group-hover:bg-tbl_tr_hover_bg">
                 <div className="flex items-center">
-                    <FaEllipsisV className="flex items-center justify-center text-tbl_star text-[13px]"/>
+                    <img src={ ellipsis_icon } alt="ellipsis icon"/>
                 </div>
             </td>
         </tr>

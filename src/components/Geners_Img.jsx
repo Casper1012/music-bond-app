@@ -1,4 +1,4 @@
-import play_icon from "../assets/img/play_btn.png";
+import play_icon from "../assets/svg/play_btn.svg";
 
 const Geners_Img = ({ url, text }) => {
     return (

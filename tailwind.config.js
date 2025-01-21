@@ -16,6 +16,7 @@ module.exports = {
         history_icon: 'rgba(164, 164, 164, 1)',
         register_btnBg: 'rgba(0, 79, 208, 1)',
         login_hover: 'rgba(40, 39, 51, 1)',
+        play_sliderBg: 'rgba(205, 205, 205, 1)',
       },
 
       boxShadow: {
@@ -35,3 +36,4 @@ module.exports = {
   },
   plugins: [],
 }
+// rgba(0, 0, 0, 0.45)
