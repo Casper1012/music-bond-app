@@ -10,7 +10,7 @@ import volume_icon from "../assets/svg/volume.svg";
 
 const MusicPlayer = () => {
   return (
-    <div className="w-full h-[97px] flex items-center gap-[10px] shadow-[0px_-20px_40px_0px_rgba(0,0,0,0.45)] font-sans bg-login_hover text-white pl-[30px] pt-[20px] pr-[30px] pb-[20px] fixed bottom-0 left-0">
+    <div className="w-full h-[97px] flex items-center justify-between gap-[10px] shadow-[0px_-20px_40px_0px_rgba(0,0,0,0.45)] font-sans bg-login_hover text-white pl-[30px] pt-[20px] pr-[30px] pb-[20px] fixed bottom-0 left-0">
       <div className='flex gap-[6px] w-[247px]'>
         <img src={music_player_icon} alt="Music player icon" />
         <div className='flex flex-col gap-[6px] justify-center'>
@@ -27,10 +27,10 @@ const MusicPlayer = () => {
         <button className='flex items-center justify-center w-[24px] h-[24px]'><img src={repeat_icon} /></button>
       </div>
       
-      <PlaybackSlider width='622px'/>
-      <div className='flex items-center pl-[100px]'>
+      <PlaybackSlider width='1024px'/>
+      <div className='flex items-center pl-[172px]'>
         <button><img src={volume_icon} alt="volume icon" /></button>
-        <PlaybackSlider width='87px'/>
+        <PlaybackSlider width='97px'/>
       </div>
     </div>
   );
