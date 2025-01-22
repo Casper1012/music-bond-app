@@ -9,15 +9,14 @@ import { ReactComponent as Arrow_Icon } from '../../assets/svg/right-alt.svg';
 
 const SideMenu = () => {
     return (
-        <div className="w-[266px] bg-sm_customBg pt-5 pr-2 pb-5 pl-2">
-            <div className='gap-[10px]'>
+        <div className="res-sidebar_menu flex flex-col w-[266px] h-screen bg-sm_customBg pt-5 pr-2 pb-5 pl-2">
                 {/* Header in the Side Menu */}
-                <div className="pt-[10px] pr-[25px] pb-[10px] pl-[25px]">
+                <div className="pt-[10px] pr-[25px] pb-[10px] pl-[25px] flex-shrink-0">
                     <Header_Title />
                 </div>
 
                 {/* Body in the Side Menu */}
-                <div className='pt-[20px] pr-[12.5px] pb-[0] pl-[12.5px]'>
+                <div className='flex flex-col flex-1 h-full pt-[20px] pr-[12.5px] pb-[0] pl-[12.5px] justify-between'>
                     <div className='h-[361px] gap-[10px] flex flex-col'>
                         <IconButton
                             icon={ <Home_Icon/> }
@@ -35,7 +34,7 @@ const SideMenu = () => {
                             variant='secondary'                            
                         />
                     </div>
-                    <div className='h-[236px] gap-[10px] flex flex-col'>
+                    <div className='h-[236px] gap-[10px] flex flex-col mb-[127px]'>
                         <div className='flex flex-col gap-[10px] h-[208px] bg-sm_connectBg rounded-[15px] pt-[16px] pr-[4px] pb-[16px] pl-[16px]'>
                             <div className='flex flex-col gap-[10px]'>
                                 <p className='text-white font-bold text-base font-sans'>
@@ -60,7 +59,6 @@ const SideMenu = () => {
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     );
 };

@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   margin: 0;
@@ -31,6 +34,20 @@ code {
 input[type="range"]::-webkit-slider-thumb {
   background: rgba(0, 96, 217, 1);
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@media (max-width: 1385px) {
+  .res-right_panel {
+    display: none;
+  }
+  .hidden_btn_right {
+    display: block;
+    float: right;
+    /* padding-left: 20px; */
+  }
+}
+
+@media (max-width: 1170px) {
+  .res-sidebar_menu {
+    display: none;
+  }
+}
