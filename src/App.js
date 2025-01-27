@@ -1,10 +1,13 @@
 import React from 'react';
 import Layout from './components/Layout';
+import { SidebarProvider } from './context/SidebarContext';
   
 function App() {
   return (
     <div>
-      <Layout />
+      <SidebarProvider>
+        <Layout />
+      </SidebarProvider>
     </div>    
   );
 }
