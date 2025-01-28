@@ -9,7 +9,7 @@ import { ReactComponent as Arrow_Icon } from '../../assets/svg/right-alt.svg';
 
 const SideMenu = () => {
     return (
-        <div className="res-sidebar_menu flex flex-col w-[266px] h-screen bg-sm_customBg pt-5 pr-2 pb-5 pl-2">
+        <div className="resSidebarMenu flex flex-col w-[266px] h-screen bg-sm_customBg pt-5 pr-2 pb-5 pl-2">
                 {/* Header in the Side Menu */}
                 <div className="pt-[10px] pr-[25px] pb-[10px] pl-[25px] flex-shrink-0">
                     <Header_Title />

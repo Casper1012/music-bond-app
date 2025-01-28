@@ -1,7 +1,8 @@
-import React from 'react';
 import { ReactComponent as Chevron_Icon } from '../assets/svg/chevron-alt.svg';
-import { useRef, useState } from "react";
+import React, { useRef, useState, useContext, useEffect } from "react";
+import MobileRightPanel from './mobileRightPanel';
 import Header from './Header';
+import { SidebarContext } from "../context/SidebarContext";
 
 import Geners_Img from './Geners_Img';
 import geners_1 from "../assets/img/geners_1.png";
@@ -30,12 +31,14 @@ const genres = [
   { url: geners_5, text: "Techno" },
 ];
 
-const MainContent = ({ toggleRightPanel }) => {
+const MainContent = () => {
   const ulRef = useRef(null);
+  const tblRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-
+  const { isSidebarOpen, closeSidebar } = useContext(SidebarContext);
+  
   const handleScroll = (direction) => {
     if (ulRef.current) {
       ulRef.current.scrollTo({
@@ -47,18 +50,21 @@ const MainContent = ({ toggleRightPanel }) => {
       });
     }
   };
-  const handleMouseDown = (e) => {
-    if (!ulRef.current) return;
+  
+  const handleMouseDown = (e, ref) => {
+    if (!ref.current) return;
+    e.preventDefault();
     setIsDragging(true);
-    setStartX(e.pageX - ulRef.current.offsetLeft);
-    setScrollLeft(ulRef.current.scrollLeft);
+    setStartX(e.pageX - ref.current.offsetLeft);
+    setScrollLeft(ref.current.scrollLeft);
   };
 
-  const handleMouseMove = (e) => {
-    if (!isDragging || !ulRef.current) return;
-    const x = e.pageX - ulRef.current.offsetLeft;
+  const handleMouseMove = (e, ref) => {
+    if (!isDragging || !ref.current) return;
+    e.preventDefault();
+    const x = e.pageX - ref.current.offsetLeft;
     const walk = (x - startX) * 1; // Adjust scroll speed (higher = faster)
-    ulRef.current.scrollLeft = scrollLeft - walk;
+    ref.current.scrollLeft = scrollLeft - walk;
   };
 
   const handleMouseUp = () => {
@@ -92,10 +98,10 @@ const MainContent = ({ toggleRightPanel }) => {
               <img src={right_hover_btn} className="absolute inset-0 w-full h-full transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100" alt="Right hover button"/>
             </button>
             <ul ref={ulRef} className={`relative flex items-start justify-start w-full space-x-[17px] overflow-x-auto overflow-y-hidden scrollbar-hide transition-all duration-300 ease-out`}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseUp}
-                onMouseUp={handleMouseUp}
+              onMouseDown={(e) => handleMouseDown(e, ulRef)}
+              onMouseMove={(e) => handleMouseMove(e, ulRef)}
+              onMouseLeave={handleMouseUp}
+              onMouseUp={handleMouseUp}
             >
                 {genres.map((genre, index) => (
                   <li className={`flex flex-none flex-col items-center justify-between space-y-1 rounded-md text-white font-bold`} key={index}>
@@ -118,21 +124,26 @@ const MainContent = ({ toggleRightPanel }) => {
           </div>
           
           {/* 13.55% 29.18% 27.22% 7.93% 12.82% rest */}
-          <div className='relative pt-[24px] h-full w-full'>
-            <table className='w-full h-[44px] table-fixed'>
+          <div ref={tblRef} className='relative pt-[24px] h-full w-full overflow-x-auto'
+            onMouseDown={(e) => handleMouseDown(e, tblRef)}
+            onMouseMove={(e) => handleMouseMove(e, tblRef)}
+            onMouseLeave={handleMouseUp}
+            onMouseUp={handleMouseUp}
+          >
+            <table className='fixed-table w-full h-[44px] table-fixed'>
               <thead>
                 <tr className='h-[44px]'>
-                  <th className='h-[44px] text-left cursor-default' style={{width:"13.55%"}}>#</th>
-                  <th className='h-[44px] text-left cursor-default' style={{width:"29.18%"}}>
+                  <th className='resTblTh1 h-[44px] text-left cursor-default w-[13.55%]'>#</th>
+                  <th className='resTblTh2 h-[44px] text-left cursor-default w-[29.18%]'>
                     Title
                   </th>
-                  <th className='h-[44px] text-left cursor-default' style={{width:"27.22%"}}>
+                  <th className='resTblTh3 h-[44px] text-left cursor-default w-[27.22%]'>
                     Genres
                   </th>
-                  <th className='h-[44px]' style={{width:"7.93%"}}>
+                  <th className='resTblTh4 h-[44px] w-[7.93%]'>
                     <div className='flex items-center justify-center'><img src={eye_icon} alt='eye_icon' /></div>
                   </th>
-                  <th className='h-[44px]' style={{width:"12.82%"}}>
+                  <th className='resTblTh5 h-[44px] w-[12.82%]'>
                     <div className='flex items-center justify-center'><img src={clock_icon} alt='clock icon' /></div>
                   </th>
                   <th className='h-[44px]'></th>
@@ -140,7 +151,7 @@ const MainContent = ({ toggleRightPanel }) => {
               </thead>
             </table>
             
-            <table className='w-full table-fixed'>          
+            <table className='fixed-table w-full table-fixed'>          
               <tbody>
                 <Tracts_Tbl />
                 <Tracts_Tbl />
@@ -163,6 +174,9 @@ const MainContent = ({ toggleRightPanel }) => {
         </div>
       </div>
       
+      {isSidebarOpen && (
+        <MobileRightPanel />
+      )}
     </div>
   );
 };

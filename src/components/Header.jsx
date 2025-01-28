@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { SidebarContext } from '../context/SidebarContext';
 import header_avatar from "../assets/svg/head_avatar.svg";
 import expand_icon from "../assets/svg/expand_more.svg";
 import { ReactComponent as BellIcon } from '../assets/svg/bell.svg';
 import { ReactComponent as HiddenIcon } from "../assets/svg/hidden_bar.svg";
 
 const Header = () => {
+  const { toggleSidebar, isSidebarOpen } = useContext(SidebarContext);
   
   return (
     <div className="h-[64px] text-white font-sans">
@@ -20,7 +22,8 @@ const Header = () => {
           <p className='font-normal text-center text-base leading-[20.16px] cursor-default'>Jenny Wilson</p>
           <img src={expand_icon} alt='expand icon' />
         </div>
-        <button><HiddenIcon className='hidden hidden_btn_right' /></button>
+        <button onClick={toggleSidebar}><HiddenIcon className='hidden hidden_btn_right' /></button>
+        {/* {isSidebarOpen ? "Close Sidebar" : "Open Sidebar"} */}
       </div>
     </div>
   );
