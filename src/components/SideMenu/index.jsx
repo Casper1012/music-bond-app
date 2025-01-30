@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
+import { SidemenuContext } from '../../context/SidemenuContext';
 import Header_Title from './header_title';
 import IconButton from './IconButton';
 import { ReactComponent as Home_Icon } from '../../assets/svg/home-alt.svg';
 import { ReactComponent as Geners_Icon } from '../../assets/svg/geners-alt.svg'; 
 import { ReactComponent as Star_Icon } from '../../assets/svg/star-alt.svg';
 import { ReactComponent as Arrow_Icon } from '../../assets/svg/right-alt.svg';
-// import { IoHomeOutline } from "react-icons/io5";
 
 const SideMenu = () => {
+    const { isSidemenuOpen, closeSidemenu } = useContext(SidemenuContext);
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+        // Close the panel when clicking outside of it
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                event.stopPropagation(); // Stop other actions from firing immediately
+                event.preventDefault(); // Prevent unwanted behaviors
+                
+                closeSidemenu(); // Close the panel
+            }
+        };
+
+        // Add the event listener when the panel is open
+        if (isSidemenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        // Clean up the event listener when the component unmounts or the panel is closed
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isSidemenuOpen, closeSidemenu]);
+    
     return (
-        <div className="resSidebarMenu flex flex-col w-[266px] h-screen bg-sm_customBg pt-5 pr-2 pb-5 pl-2">
+        <div ref = { menuRef } className={`${isSidemenuOpen ? 'resSideMenuToggle' : ''} resSideMenu flex flex-col w-[266px] h-screen bg-sm_customBg pt-5 pr-2 pb-5 pl-2`}>
                 {/* Header in the Side Menu */}
                 <div className="pt-[10px] pr-[25px] pb-[10px] pl-[25px] flex-shrink-0">
                     <Header_Title />
@@ -34,7 +59,7 @@ const SideMenu = () => {
                             variant='secondary'                            
                         />
                     </div>
-                    <div className='h-[236px] gap-[10px] flex flex-col mb-[127px]'>
+                    <div className='resMsgBox h-[236px] gap-[10px] flex flex-col mb-[127px]'>
                         <div className='flex flex-col gap-[10px] h-[208px] bg-sm_connectBg rounded-[15px] pt-[16px] pr-[4px] pb-[16px] pl-[16px]'>
                             <div className='flex flex-col gap-[10px]'>
                                 <p className='text-white font-bold text-base font-sans'>

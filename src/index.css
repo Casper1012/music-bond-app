@@ -35,6 +35,37 @@ input[type="range"]::-webkit-slider-thumb {
   background: rgba(0, 96, 217, 1);
 }
 
+@media (max-width: 1655px) {
+  .resPlayBack {
+    width: 50%;
+  }
+  .resMusicAvatar {
+    width: 16%;
+  }
+  .resMusicControl {
+    width: 12%;
+  }
+}
+
+@media (max-width: 1465px) {
+  .resMusicAvatar {
+    width: 18%;
+  }
+  .resPlayBack {
+    width: 45%;
+  }
+  .resMusicControl {
+    width: 15%;
+  }
+  .resVolume {
+    width: 15%;
+  }
+  .resVolume div {
+    width: 70%;
+    float:right;
+  }
+}
+
 @media (max-width: 1440px) {
   .resRightPanel {
     display:none;
@@ -48,9 +79,78 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 
-@media (max-width: 1120px) {
-  .resSidebarMenu {
+@media (max-width: 1360px) {
+  .resMusicPlayer {
+    height: 87px;
+  }
+  .resMusicAvatar img {
+    width: 40px;
+  }
+  .resMusicAvatar div p:nth-child(1)
+  {
+    font-size: 15px;
+  }
+  .resMusicAvatar div p:nth-child(2)
+  {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .resHead {
+    margin-bottom: 25px;
+  }
+
+  .resMusicPlayer {
+    height: auto;
+    display: flex;          
+    flex-wrap: wrap;
+    justify-content: flex-start;         
+    gap: 20px;
+  }
+  .resMusicAvatar {
+    flex: 0 0 calc(50% - 10px);
+  }
+  .resMusicAvatar img {
+    width: 50px;
+  }
+  .resMusicAvatar div p:nth-child(1)
+  {
+    font-size: 16px;
+  }
+  .resMusicAvatar div p:nth-child(2)
+  {
+    font-size: 14px;
+  }
+
+  .resMusicControl {
+    flex: 0 0 calc(40% - 10px);
+  }
+  .resVolume {
+    flex: 0 0 calc(30% - 10px);
+  }
+  .resPlayBack {
+    flex: 0 0 calc(70% - 10px);
+  }
+  .resMusicAvatar, .resMusicControl {
+    order: 1;
+  }
+  .resSideMenuToggle {
+    z-index: 50;
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  .resMsgBox {
+    margin-bottom: 65px;
+  }
+  .resSideMenu {
     display: none;
+  }
+  .hidden_btn_left {
+    display: block;
   }
 }
 
@@ -104,91 +204,6 @@ input[type="range"]::-webkit-slider-thumb {
     white-space: nowrap; /* Prevent wrapping */
     cursor: grab; /* Change cursor to indicate draggable */
     position: relative; /* Ensure other elements remain stable */
-  }
-}
-
-@media (max-width: 1655px) {
-  .resPlayBack {
-    width: 50%;
-  }
-  .resMusicAvatar {
-    width: 16%;
-  }
-  .resMusicControl {
-    width: 12%;
-  }
-}
-
-@media (max-width: 1465px) {
-  .resMusicAvatar {
-    width: 18%;
-  }
-  .resPlayBack {
-    width: 45%;
-  }
-  .resMusicControl {
-    width: 15%;
-  }
-  .resVolume {
-    width: 15%;
-  }
-  .resVolume div {
-    width: 70%;
-    float:right;
-  }
-}
-
-@media (max-width: 1360px) {
-  .resMusicPlayer {
-    height: 87px;
-  }
-  .resMusicAvatar img {
-    width: 40px;
-  }
-  .resMusicAvatar div p:nth-child(1)
-  {
-    font-size: 15px;
-  }
-  .resMusicAvatar div p:nth-child(2)
-  {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 1130px) {
-  .resMusicPlayer {
-    height: auto;
-    display: flex;          
-    flex-wrap: wrap;
-    justify-content: flex-start;         
-    gap: 20px;
-  }
-  .resMusicAvatar {
-    flex: 0 0 calc(50% - 10px);
-  }
-  .resMusicAvatar img {
-    width: 50px;
-  }
-  .resMusicAvatar div p:nth-child(1)
-  {
-    font-size: 16px;
-  }
-  .resMusicAvatar div p:nth-child(2)
-  {
-    font-size: 14px;
-  }
-
-  .resMusicControl {
-    flex: 0 0 calc(40% - 10px);
-  }
-  .resVolume {
-    flex: 0 0 calc(30% - 10px);
-  }
-  .resPlayBack {
-    flex: 0 0 calc(70% - 10px);
-  }
-  .resMusicAvatar, .resMusicControl {
-    order: 1;
   }
 }
 

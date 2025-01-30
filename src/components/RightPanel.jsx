@@ -8,7 +8,6 @@ import bitcoin_icon from "../assets/svg/bitcoin.svg";
 import arrow_right from "../assets/svg/arrow_right.svg";
 
 const RightPanel = () => {
-  const { isSidebarOpen } = useContext(SidebarContext);
   
   return (
     <div className="resRightPanel w-[314px] h-screen flex flex-col text-white font-sans bg-mc_customBg border-l-2 border-tbl_border pl-2 pt-[26px] pr-6 pb-0 overflow-hidden">
