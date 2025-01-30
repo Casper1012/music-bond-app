@@ -1,13 +1,16 @@
 import React from 'react';
 import Layout from './components/Layout';
 import { SidebarProvider } from './context/SidebarContext';
+import { SidemenuProvider } from './context/SidemenuContext';
   
 function App() {
   return (
     <div>
-      <SidebarProvider>
-        <Layout />
-      </SidebarProvider>
+      <SidemenuProvider>
+        <SidebarProvider>
+          <Layout />
+        </SidebarProvider>
+      </SidemenuProvider>
     </div>    
   );
 }

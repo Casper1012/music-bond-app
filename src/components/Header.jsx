@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { SidebarContext } from '../context/SidebarContext';
+import { SidemenuContext } from '../context/SidemenuContext';
 import header_avatar from "../assets/svg/head_avatar.svg";
 import expand_icon from "../assets/svg/expand_more.svg";
 import { ReactComponent as BellIcon } from '../assets/svg/bell.svg';
@@ -7,10 +8,14 @@ import { ReactComponent as HiddenIcon } from "../assets/svg/hidden_bar.svg";
 
 const Header = () => {
   const { toggleSidebar, isSidebarOpen } = useContext(SidebarContext);
+  const { toggleSidemenu, isSidemenuOpen } = useContext(SidemenuContext);
   
   return (
-    <div className="h-[64px] text-white font-sans">
+    <div className="h-[64px] resHead flex justify-between text-white font-sans">
       {/* Add header content here, such as a logo or navigation links */}
+      <div className='flex items-center mt-[16px] ml-[-4px]'>
+        <button onClick={toggleSidemenu}><HiddenIcon className='hidden hidden_btn_left' /></button>
+      </div>
       
       <div className='flex items-center gap-[30px] h-[46px] mt-[16px] float-right'>
         <div className='flex items-center justify-center hover:bg-login_hover rounded-full w-[34px] h-[34px] transition-colors duration-300'>
@@ -23,7 +28,6 @@ const Header = () => {
           <img src={expand_icon} alt='expand icon' />
         </div>
         <button onClick={toggleSidebar}><HiddenIcon className='hidden hidden_btn_right' /></button>
-        {/* {isSidebarOpen ? "Close Sidebar" : "Open Sidebar"} */}
       </div>
     </div>
   );

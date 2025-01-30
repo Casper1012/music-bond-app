@@ -3,10 +3,8 @@ import SideMenu from './SideMenu';
 import RightPanel from './RightPanel';
 import MusicPlayer from './MusicPlayer';
 import MainContent from './MainContent';
-import { SidebarContext } from '../context/SidebarContext';
 
 const Layout = () => {
-  const { isSidebarOpen } = useContext(SidebarContext);
   
   return (
     <div className="w-full h-screen flex flex-col">
@@ -19,7 +17,6 @@ const Layout = () => {
 
         {/* Right Panel */}
         <RightPanel />
-
       </div>
 
       {/* Music Player (Fixed at the bottom) */}
